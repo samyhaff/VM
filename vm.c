@@ -9,10 +9,11 @@ typedef enum {
     } Registers;
 
 typedef enum {
+    NOP,
     PSH,
     ADD,
     POP,
-    SET,
+    SET, 
     HLT
 } InstructionSet;
 
@@ -45,6 +46,9 @@ int fetch() {
 
 void eval(int instr) {
     switch (instr) {
+        case NOP: {
+            printf("pass\n");
+        }
         case HLT: {
             running = false;
             break;
